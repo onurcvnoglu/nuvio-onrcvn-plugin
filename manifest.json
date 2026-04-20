@@ -1,6 +1,6 @@
 {
   "name": "Onurcvn Stream Providers",
-  "description": "AnimeciX, Dizilla ve HDFilmCehennemi kaynaklarini Nuvio icin saglayan provider deposu.",
+  "description": "AnimeciX, Dizilla, HDFilmCehennemi, DiziPal, TurkAnime ve WebDramaTurkey kaynaklarini Nuvio icin saglayan provider deposu.",
   "version": "0.1.0",
   "scrapers": [
     {
@@ -70,6 +70,85 @@
       "contentLanguage": [
         "tr",
         "en"
+      ],
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "dizipal",
+      "name": "DiziPal",
+      "description": "DiziPal kaynagini Nuvio icin stream provider olarak sunar.",
+      "version": "0.1.0",
+      "author": "Onur Civanoglu",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dizipal.js",
+      "enabled": true,
+      "logo": "https://www.google.com/s2/favicons?domain=https://dizipal.im&sz=64",
+      "contentLanguage": [
+        "tr",
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "turkanime",
+      "name": "TurkAnime",
+      "description": "TurkAnime kaynagini Nuvio icin stream provider olarak sunar.",
+      "version": "0.1.0",
+      "author": "Onur Civanoglu",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/turkanime.js",
+      "enabled": true,
+      "logo": "https://www.google.com/s2/favicons?domain=https://www.turkanime.tv&sz=64",
+      "contentLanguage": [
+        "tr",
+        "ja",
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "webdramaturkey",
+      "name": "WebDramaTurkey",
+      "description": "WebDramaTurkey kaynagini Nuvio icin stream provider olarak sunar.",
+      "version": "0.1.0",
+      "author": "Onur Civanoglu",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/webdramaturkey.js",
+      "enabled": true,
+      "logo": "https://www.google.com/s2/favicons?domain=https://webdramaturkey2.com&sz=64",
+      "contentLanguage": [
+        "tr",
+        "en",
+        "ja",
+        "ko",
+        "zh"
       ],
       "formats": [
         "mp4",

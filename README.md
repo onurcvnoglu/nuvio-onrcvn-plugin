@@ -1,10 +1,13 @@
 # Nuvio Stream Providers
 
-Bu repo, Nuvio icin uc provider sunar:
+Bu repo, Nuvio icin alti provider sunar:
 
 - `AnimeciX`
 - `Dizilla`
 - `HDFilmCehennemi`
+- `DiziPal`
+- `TurkAnime`
+- `WebDramaTurkey`
 
 Ilk surumde repo yalnizca stream discovery amacina odaklanir. Nuvio icinde katalog veya ana sayfa akisi olusturmaz; sadece `getStreams(tmdbId, mediaType, season, episode)` contract'ini uygular.
 
@@ -26,7 +29,7 @@ Repo GitHub'a push edildikten sonra Nuvio icinde su akisi izle:
 https://raw.githubusercontent.com/onurcvnoglu/nuvio-onrcvn-plugin/refs/heads/main/manifest.json
 ```
 
-6. Repository yuklendikten sonra `AnimeciX`, `Dizilla` ve `HDFilmCehennemi` provider'larini etkinlestir.
+6. Repository yuklendikten sonra istedigin provider'lari etkinlestir.
 7. Bir film veya dizi acip stream listesinde provider sonucunu kontrol et.
 
 ### 2. Yerelden ekleme
@@ -94,8 +97,7 @@ Bu script:
 
 - manifest parse kontrolu yapar
 - built provider dosyalarini `require()` ile yukler
-- AnimeciX ve HDFilmCehennemi icin pozitif smoke test dener
-- Dizilla icin sonuc sayisini raporlar ama degisken kaynak davranisi nedeniyle bilgilendirici moda yakindir
+- temel provider akisini dogrulamak icin secili kaynaklarda stream sonucunu raporlar
 
 ## Mimari
 
