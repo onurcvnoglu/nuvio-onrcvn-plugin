@@ -1,0 +1,83 @@
+{
+  "name": "Onurcvn Stream Providers",
+  "description": "AnimeciX, Dizilla ve HDFilmCehennemi kaynaklarini Nuvio icin saglayan provider deposu.",
+  "version": "0.1.0",
+  "scrapers": [
+    {
+      "id": "animecix",
+      "name": "AnimeciX",
+      "description": "AnimeciX kaynagini Nuvio icin stream provider olarak sunar.",
+      "version": "0.1.0",
+      "author": "Onur Civanoglu",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/animecix.js",
+      "enabled": true,
+      "logo": "https://www.google.com/s2/favicons?domain=https://animecix.tv&sz=64",
+      "contentLanguage": [
+        "tr",
+        "ja",
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "dizilla",
+      "name": "Dizilla",
+      "description": "Dizilla kaynagini Nuvio icin stream provider olarak sunar.",
+      "version": "0.1.0",
+      "author": "Onur Civanoglu",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dizilla.js",
+      "enabled": true,
+      "logo": "https://www.google.com/s2/favicons?domain=https://dizilla.to&sz=64",
+      "contentLanguage": [
+        "tr",
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "hdfilmcehennemi",
+      "name": "HDFilmCehennemi",
+      "description": "HDFilmCehennemi kaynagini Nuvio icin stream provider olarak sunar.",
+      "version": "0.1.0",
+      "author": "Onur Civanoglu",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/hdfilmcehennemi.js",
+      "enabled": true,
+      "logo": "https://www.google.com/s2/favicons?domain=https://www.hdfilmcehennemi.nl&sz=64",
+      "contentLanguage": [
+        "tr",
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    }
+  ]
+}
