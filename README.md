@@ -8,6 +8,26 @@ Bu repo, Nuvio icin uc dogrudan kaynak provider'i sunar:
 
 Provider'lar artik araya baska bir API koymadan dogrudan kaynak sitelerin arama, detay ve embed akislarini kullanir. Nuvio icinde katalog veya ana sayfa akisi olusturmaz; sadece `getStreams(tmdbId, mediaType, season, episode)` contract'ini uygular.
 
+## Gelistirme
+
+Bagimliliklari kur:
+
+```bash
+npm install
+```
+
+Bundle dosyalarini yeniden uret:
+
+```bash
+npm run build:all
+```
+
+Temel smoke testi calistir:
+
+```bash
+npm run smoke
+```
+
 ## Nuvio'da Kullanim
 
 Bu provider repository'sini Nuvio'ya iki farkli sekilde ekleyebilirsin.
