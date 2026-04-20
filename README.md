@@ -1,15 +1,12 @@
 # Nuvio Stream Providers
 
-Bu repo, Nuvio icin alti provider sunar:
+Bu repo, Nuvio icin uc dogrudan kaynak provider'i sunar:
 
-- `AnimeciX`
 - `Dizilla`
-- `HDFilmCehennemi`
-- `DiziPal`
-- `TurkAnime`
+- `SelcukFlix`
 - `WebDramaTurkey`
 
-Ilk surumde repo yalnizca stream discovery amacina odaklanir. Nuvio icinde katalog veya ana sayfa akisi olusturmaz; sadece `getStreams(tmdbId, mediaType, season, episode)` contract'ini uygular.
+Provider'lar artik araya baska bir API koymadan dogrudan kaynak sitelerin arama, detay ve embed akislarini kullanir. Nuvio icinde katalog veya ana sayfa akisi olusturmaz; sadece `getStreams(tmdbId, mediaType, season, episode)` contract'ini uygular.
 
 ## Nuvio'da Kullanim
 
@@ -36,10 +33,8 @@ https://raw.githubusercontent.com/onurcvnoglu/nuvio-onrcvn-plugin/refs/heads/mai
 
 Gelistirme sirasinda yerel agdan test etmek icin:
 
-1. Bu repoda bagimliliklari kur.
-2. Provider bundle'larini build et.
-3. Yerel HTTP server'i baslat.
-4. Nuvio icinde yerel `manifest.json` adresini ekle.
+1. Repo klasorunu statik bir HTTP server ile servis et.
+2. Nuvio icinde yerel `manifest.json` adresini ekle.
 
 Ornek yerel manifest adresi:
 
@@ -49,67 +44,15 @@ http://<local-ip>:3000/manifest.json
 
 `<local-ip>` degeri olarak ayni Wi-Fi agindaki bilgisayarinin IP adresini kullan.
 
-## Kurulum
+Ornek statik servis komutu:
 
 ```bash
-npm install
+python3 -m http.server 3000
 ```
-
-## Build
-
-Tum provider'lari build etmek icin:
-
-```bash
-npm run build:all
-```
-
-Belirli provider'lari build etmek icin:
-
-```bash
-node build.js animecix dizilla
-```
-
-## Yerel Servis ve Test
-
-Manifest ve bundle dosyalarini yerelde servis etmek icin:
-
-```bash
-npm start
-```
-
-Nuvio icinde asagidaki URL eklenir:
-
-```text
-http://<local-ip>:3000/manifest.json
-```
-
-Nuvio uygulamasi ile bilgisayarin ayni agda olmali.
-
-## Smoke Test
-
-Temel entegrasyon testi:
-
-```bash
-npm run smoke
-```
-
-Bu script:
-
-- manifest parse kontrolu yapar
-- built provider dosyalarini `require()` ile yukler
-- temel provider akisini dogrulamak icin secili kaynaklarda stream sonucunu raporlar
-
-## Mimari
-
-- `src/common/`
-  Provider istemcisi, TMDB resolver, normalize ve matching yardimcilari
-- `src/providers/<provider>/index.js`
-  Provider entrypoint
-- `providers/`
-  Nuvio'nun tukecegi build ciktilari
 
 ## Notlar
 
-- TMDB metadata public HTML sayfalarindan cozulur; API key gerekmez.
-- Kaynak API'den gelen `subtitles` alanlari ilk surumde Nuvio stream objesine tasinmaz.
-- Kaynak API'den gelen URL alanlari bazen percent-encoded oldugu icin provider tarafinda normalize edilir.
+- `Dizilla` yalnizca `tv` tipi icin aciktir; kaynak site akisi dizi odaklidir.
+- `SelcukFlix` ve `WebDramaTurkey` icin hem `movie` hem `tv` desteklenir.
+- `Dizilla` ve `WebDramaTurkey` domainleri degisebildigi icin provider kodu guncel domain listesini oncelemeye calisir.
+- Bazi hostlar zaman zaman Cloudflare veya benzeri korumalar gosterebilir; provider bu durumda hata firlatmak yerine bos sonuc dondurur.
